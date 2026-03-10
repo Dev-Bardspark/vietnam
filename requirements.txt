@@ -1,2 +1,4 @@
 streamlit
 pandas
+pillow
+openai==1.12.0
