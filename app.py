@@ -25,7 +25,11 @@ df = load_data()
 # Initialize OpenAI client
 @st.cache_resource
 def get_openai_client():
-    return openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    # New client initialization (no proxies argument)
+    client = openai.OpenAI(
+        api_key=st.secrets["OPENAI_API_KEY"]
+    )
+    return client
 
 # App title
 st.title("🍜 Vietnam Food Identifier")
