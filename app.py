@@ -5,7 +5,9 @@ import pandas as pd
 # Load the database
 @st.cache_data
 def load_data():
-    return pd.read_csv('vietnamese_foods.csv')
+    df = pd.read_csv('vietnamese_foods.csv')
+    df = df.fillna('')  # Replace NaN with empty string
+    return df
 
 df = load_data()
 
